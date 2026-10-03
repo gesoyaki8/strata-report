@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-03",
+  "model": "Qwen3.8-Flash-Next Coder IQ1_M",
+  "optimization": {
+    "baseline_warm_tokens_s": 32.95,
+    "candidate_warm_tokens_s": 36.6,
+    "final_warm_tokens_s": 35.85,
+    "context": 65536,
+    "workers": 7,
+    "pcie_frac": 0.65
+  },
+  "simple_project": {
+    "stages_passed": [
+      6,
+      12,
+      16
+    ],
+    "generation_s": [
+      50.3,
+      23.6354686,
+      25.0982535
+    ],
+    "implementation_edits": 0
+  },
+  "advanced_project": {
+    "base_tests": 13,
+    "attempt_pass_counts": [
+      3,
+      3,
+      3
+    ],
+    "guided_pass_count": 10,
+    "further_tests_not_run": 15
+  },
+  "ssd": {
+    "request_s": 9.192762,
+    "read_mib": 0.578125,
+    "write_mib": 0.09765625,
+    "avg_read_mib_s": 0.0628891513,
+    "peak_read_mib_s": 0.4131605705,
+    "idle_s": 10.0011944,
+    "idle_read_mib": 32.32275390625,
+    "idle_write_mib": 0.140625,
+    "scope": "G: physical disk including OS and other applications",
+    "sample_s": 0.5
+  }
+}

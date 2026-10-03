@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Strata 実測レポート — このPCで、どこまでできる？</title>
+  <meta name="description" content="RX 9070 XT・32GB RAMでのStrata導入、最適化、コーディング能力とSSD使用量の実測結果。">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f172a'/%3E%3Cpath d='M6 9h20M6 16h16M6 23h12' stroke='%2322d3ee' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top"><a class="brand" href="#overview"><span class="mark">≡</span> STRATA <span class="brand-note">LOCAL AI / FIELD NOTES</span></a><span class="date">2026.10.03 · 実測記録</span></header>
+  <div class="layout">
+    <aside class="sidebar"><div class="sidebar-label">このPCの調査記録</div><nav aria-label="レポートの目次"><a href="#overview">01　結果の概要</a><a href="#environment">02　環境と設定</a><a href="#performance">03　速度と最適化</a><a href="#coding">04　コーディング能力</a><a href="#storage">05　SSDの読み書き</a><a href="#conclusion">06　使い方と検証の限界</a></nav><div class="sidebar-foot">データは測定時点の記録です。<br>現在の稼働状況を表示する<br>ライブモニターではありません。</div></aside>
+    <main>
+      <section id="overview" class="intro">
+        <div class="eyebrow">01 / OVERVIEW</div>
+        <h1>このPCで、<br>Strataはどこまでできる？</h1>
+        <p class="lead">導入から開発テストまで。速さだけでなく、<strong>正しく動くコードを作れるか</strong>と、SSDへの負荷を実際に確認しました。</p>
+        <div class="verdict"><span class="badge cyan">今回の結論</span><p>小さなPythonツールの補助には有望。<br class="desktop">複数ファイルの開発では、人間の診断と細かなテストが必要でした。</p></div>
+        <div class="stats">
+          <article><span class="stat-label">最適化後の生成速度</span><div class="stat-number">35.9 <small>tokens/s</small></div><span class="stat-note cyan-text">元の設定から約8.8%改善</span></article>
+          <article><span class="stat-label">簡単な開発テスト</span><div class="stat-number">16<span class="muted"> / 16</span></div><span class="stat-note">CSVツール · 最終テスト合格</span></article>
+          <article><span class="stat-label">難しい開発テスト</span><div class="stat-number">10<span class="muted"> / 13</span></div><span class="stat-note amber-text">具体的なヒントあり · 未完成</span></article>
+          <article><span class="stat-label">生成中のSSD読み込み</span><div class="stat-number">0.58 <small>MiB</small></div><span class="stat-note">256トークンを生成した約9.2秒間</span></article>
+        </div>
+        <p class="caption">数字はそれぞれ異なるテストの結果です。生成速度は英語・思考オフ・同じ質問の繰り返し時。SSD量はG:全体で、他のアプリも含みます。</p>
+      </section>
+
+      <section id="environment">
+        <div class="section-head"><div><div class="eyebrow">02 / ENVIRONMENT</div><h2>動かしているモデルとPC</h2></div><span class="tag">ローカル実行</span></div>
+        <div class="model-strip"><span class="model-icon">Q</span><div><span class="muted">使用モデル</span><h3>Qwen3.8-Flash-Next Coder <em>IQ1_M</em></h3><p>コード向けモデルをIQ1_Mで量子化し、必要なメモリー量を抑えています。日本語の回答には繰り返しも見られました。</p></div></div>
+        <div class="two-col"><div class="panel"><h3>PCの構成</h3><dl><div><dt>GPU</dt><dd>Radeon RX 9070 XT <span>16 GB VRAM</span></dd></div><div><dt>CPU</dt><dd>Ryzen 7 5700X <span>8コア / 16スレッド</span></dd></div><div><dt>RAM</dt><dd>32 GB</dd></div><div><dt>保存先</dt><dd>G: のNVMe SSD <span>SHGP31-1000GM / 1 TB</span></dd></div><div><dt>OS / エンジン</dt><dd>Windows 11 / Strata 0.1.38 <span>AMD HIP</span></dd></div></dl></div><div class="panel"><h3>維持している設定</h3><dl><div><dt>最大会話長</dt><dd>65,536トークン <span>64Kを維持</span></dd></div><div><dt>会話キャッシュ</dt><dd>8ビット（int8）</dd></div><div><dt>CPUの並列数</dt><dd>7</dd></div><div><dt>GPUへの振り分け</dt><dd>0.65 <span>PCIe経由の処理分担</span></dd></div><div><dt>画像 / 実験的投影</dt><dd>オフ / オフ</dd></div></dl></div></div>
+        <figure class="diagram"><img src="assets/memory.svg" width="1000" height="290" alt="SSDにモデルを保存し、起動後は約19.5GiBの専門家データをRAM、約4.7GiBをGPUのキャッシュに保持する構成図"><figcaption>最終測定時の構成。モデルデータの保存容量は約92 GB。全ファイルを毎回読み込むわけではありません。</figcaption></figure>
+      </section>
+
+      <section id="performance">
+        <div class="section-head"><div><div class="eyebrow">03 / PERFORMANCE</div><h2>64Kを保って、処理分担を調整</h2></div><span class="tag">同じ条件で比較</span></div>
+        <p class="section-copy">CPUを多く並列に動かすより、7並列のままGPUの担当を増やす方が速い結果になりました。最速の候補は再起動後にも測り直しました。</p>
+        <div class="two-col"><figure class="panel figure-panel"><h3>設定ごとの生成速度</h3><img src="assets/optimization.svg" width="640" height="370" alt="元の設定33.0、GPU振り分け調整36.6、CPU15並列19.8、最終再測定35.9トークン毎秒の比較"><figcaption>各設定の2・3回目を平均。英語のCSV関数作成、思考オフ、256トークン、temperature 0。</figcaption></figure><div class="panel"><h3>最終設定での3回の測定</h3><div class="table-wrap"><table><thead><tr><th>回</th><th>返答開始</th><th>生成速度</th><th>全体</th></tr></thead><tbody><tr><td>1回目</td><td>2.94秒</td><td>22.3 t/s</td><td>14.34秒</td></tr><tr><td>2回目</td><td>0.22秒</td><td>36.2 t/s</td><td>7.25秒</td></tr><tr><td>3回目</td><td>0.24秒</td><td>35.5 t/s</td><td>7.40秒</td></tr></tbody></table></div><div class="insight"><strong>繰り返しの速さ ≠ 毎回の速さ</strong><p>同じ質問では入力やモデルのキャッシュが効きます。別の質問や長い入力では、待ち時間も生成速度も変わります。</p></div><p class="caption">実行時のRAM確保量も変わったため、改善のすべてが振り分け設定だけの効果とは断定できません。</p></div></div>
+        <details class="evidence"><summary>実際のMonitor画面と、日本語での初回測定を見る</summary><div class="screen-evidence"><a href="assets/monitor.png" target="_blank" rel="noopener"><img src="assets/monitor.png" width="693" height="1019" loading="lazy" alt="Strata Monitorの実際の画面。日本語の同じ質問の生成速度が11.2、23.7、26.2トークン毎秒と表示されている"></a><div><h3>日本語の質問でも3回測定</h3><p>「PythonでCSVを読み込み、列ごとの平均を計算する関数を書いて」</p><ul><li>生成速度：11.2 → 23.7 → 26.2 t/s</li><li>返答開始：約5.3 → 0.7 → 0.4秒</li><li>全体：28.0 → 11.3 → 10.0秒</li></ul><p class="caption">最適化前の別テストです。temperature 0.6、思考オフ、256トークン。英語の最適化テストと直接比較はできません。返答開始は0.1秒間隔の概算。画像をクリックすると全体を確認できます。</p></div></div></details>
+      </section>
+
+      <section id="coding">
+        <div class="section-head"><div><div class="eyebrow">04 / CODING</div><h2>簡単な課題では成功。難しくすると限界も。</h2></div></div>
+        <p class="section-copy">実装はStrataが生成。こちらで先に用意したテストを実行し、失敗したらログを渡しました。生成コードの直接手直しはしていません。</p>
+        <div class="case-tabs" role="tablist" aria-label="コーディングテストの種類"><button id="tab-simple" role="tab" aria-selected="true" aria-controls="case-simple" tabindex="0">単一ファイル · CSV集計</button><button id="tab-advanced" role="tab" aria-selected="false" aria-controls="case-advanced" tabindex="-1">3ファイル · SQLite管理</button></div>
+        <article id="case-simple" class="case" role="tabpanel" aria-labelledby="tab-simple"><div class="case-header"><div><span class="badge cyan">完成</span><h3>CSV集計ツール</h3><p>作成 → 列指定・JSON出力 → NaNやBOMの修正</p></div><div class="case-score">16<span> / 16 合格</span></div></div><div class="steps"><div><span>STEP 01</span><h4>新規作成</h4><p>平均計算、空欄・文字列の除外、負数、小数、日本語列名。</p><strong>6/6 合格 <small>約50秒</small></strong></div><div><span>STEP 02</span><h4>機能追加</h4><p>列指定、JSON出力、コマンド操作、エラー処理。</p><strong>12/12 合格 <small>約24秒</small></strong></div><div><span>STEP 03</span><h4>バグ修正</h4><p>NaN・無限大、BOM付きCSV。既存機能も確認。</p><strong>16/16 合格 <small>約25秒</small></strong></div></div><div class="case-bottom"><strong>コードの手直し 0回 / 各段階の追加修正依頼 0回</strong><p>修正前は追加テスト3件が失敗。仕様と失敗ログを渡すと、最初の回答で修正できました。生成時間は合計約99秒で、測定側の準備・修正時間は含みません。</p></div></article>
+        <article id="case-advanced" class="case" role="tabpanel" aria-labelledby="tab-advanced" hidden><div class="case-header"><div><span class="badge amber">未完成</span><h3>SQLiteタスク管理CLI</h3><p>保存処理・入力検証・CLIを分けた3ファイル構成。</p></div><div class="case-score amber-text">10<span> / 13 合格</span></div></div><figure class="advanced-chart"><img src="assets/coding.svg" width="1000" height="250" alt="基本機能13件に対し、初回と失敗ログでの修正は3件合格10件失敗、具体的な原因説明後は10件合格3件失敗"><figcaption>通常試行3回は同一のコード。新しい会話で具体的な原因を説明すると改善しました。</figcaption></figure><div class="two-col case-notes"><div><h4>つまずいた点</h4><p>CLIがオプションを受け取れず、SQLiteの追加SQLにも構文ミス。失敗ログだけでは直せませんでした。</p></div><div><h4>ヒントで改善した点と、残った不具合</h4><p>追加・一覧・検索は成功。ただし完了処理のSQLに別の構文ミスが残り、関連3件が失敗しました。</p></div></div><div class="case-bottom warning"><strong>28件すべてを評価したわけではありません。</strong><p>基本機能13件の合格数です。JSON入出力や一括取り消し等の後続15件は、基本機能が完成せず未評価。生成4回の合計は約169秒でした。</p></div></article>
+        <p class="caption">いずれも英語・思考オフ。ファイル保存とテスト実行はCodexが仲介した評価で、Strata単体の自律エージェントとしての評価ではありません。</p>
+      </section>
+
+      <section id="storage">
+        <div class="section-head"><div><div class="eyebrow">05 / STORAGE</div><h2>今のSSD負荷は、どれくらい？</h2></div><span class="tag">20:22の実測</span></div>
+        <p class="section-copy">初回はRAM確保に失敗し、SSDから読む状態でした。再起動後は約19.5 GiBをRAMに保持でき、今回の短い回答中はSSDを大量に読み続けてはいませんでした。</p>
+        <div class="two-col"><figure class="panel figure-panel"><h3>G:のSSDに発生した通信量</h3><img src="assets/ssd.svg" width="640" height="330" alt="待機10秒のSSD読み込み32.32MiB、回答生成9.19秒の読み込み0.578MiB。書き込みはそれぞれ0.141MiBと0.098MiB"><figcaption>待機中の方が読み込みが多い結果。他のアプリ・OSの通信も含むため、すべてをStrataの負荷とはみなせません。</figcaption></figure><div class="panel"><h3>256トークン生成中の数値</h3><dl><div><dt>処理時間</dt><dd>9.19秒</dd></div><div><dt>読み込み / 書き込み</dt><dd>0.578 / 0.098 MiB</dd></div><div><dt>読み込み平均 / ピーク</dt><dd>0.063 / 0.413 MiB/秒</dd></div><div><dt>モデルの専門家データ</dt><dd>ファイル読み込み 0回 <span>このリクエストのエンジン統計</span></dd></div><div><dt>モデルデータの保存容量</dt><dd>約92 GB <span>1回の処理量とは別</span></dd></div></dl></div></div>
+        <div class="insight wide"><strong>「ログの数十GB read」と「実際のSSD通信」は別の数字</strong><p>ファイルへの読み込み要求は、OSのメモリー上のキャッシュで処理されることもあります。今回のSSD測定はWindowsのディスクデバイスのカウンター。MonitorのDisk readも、PC全体の値でモデル専用ではありません。</p></div><p class="caption">0.5秒間隔で測定。1 MiB = 1,048,576バイト。起動時、長文、メモリー不足時は増える可能性があります。SSD内部のNAND書き込み量や寿命を測定したものではありません。</p>
+      </section>
+
+      <section id="conclusion">
+        <div class="section-head"><div><div class="eyebrow">06 / TAKEAWAYS</div><h2>この環境での、現実的な使い方</h2></div></div>
+        <div class="takeaways"><article><span>01</span><h3>小さく任せる</h3><p>関数や小規模CLIなど、仕様が明確な作業から。今回のCSVツールでは手直しなしで完成しました。</p></article><article><span>02</span><h3>テストを先に用意する</h3><p>動く見た目だけで判断しない。数値、保存、入力エラー、変更後の既存機能を確認します。</p></article><article><span>03</span><h3>複雑な変更は分ける</h3><p>DB・CLI・入出力を一度に任せず、段階ごとに検証。失敗ログだけで直らない場合は原因を説明します。</p></article></div>
+        <div class="limits"><h3>まだ確認していないこと</h3><p>思考ありとの比較、64Kを埋める長文、大規模なコードベース、外部ライブラリー、完全自律のファイル編集。今回の結果を、これらの性能まで広げて判断しないことが大切です。</p></div>
+        <details class="sources"><summary>元のレポートと測定データ</summary><ul><li><a href="assets/environment-report.md" download>環境・設定・最適化レポート</a></li><li><a href="assets/simple-report.md" download>CSVツールの実用性テスト</a></li><li><a href="assets/advanced-report.md" download>SQLiteプロジェクトの開発テスト</a></li><li><a href="assets/ssd-report.md" download>SSD使用量レポート</a></li><li><a href="assets/evidence.json" download>サイトの主要測定値（JSON）</a></li><li><a href="https://github.com/Niko1221/Strata" target="_blank" rel="noopener">Strataリポジトリー</a></li></ul></details>
+      </section>
+      <footer>STRATA / LOCAL AI FIELD NOTES <span>測定日 2026.10.03 · このPCでの検証結果</span></footer>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

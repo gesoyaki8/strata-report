@@ -1,0 +1,5 @@
+const tabs=[...document.querySelectorAll('[role="tab"]')];
+function selectTab(tab){tabs.forEach(t=>{const selected=t===tab;t.setAttribute('aria-selected',String(selected));t.tabIndex=selected?0:-1;document.getElementById(t.getAttribute('aria-controls')).hidden=!selected;});}
+tabs.forEach((tab,index)=>{tab.addEventListener('click',()=>selectTab(tab));tab.addEventListener('keydown',event=>{let next;if(event.key==='ArrowRight')next=tabs[(index+1)%tabs.length];if(event.key==='ArrowLeft')next=tabs[(index+tabs.length-1)%tabs.length];if(event.key==='Home')next=tabs[0];if(event.key==='End')next=tabs[tabs.length-1];if(next){event.preventDefault();selectTab(next);next.focus();}});});
+const nav=[...document.querySelectorAll('nav a')];
+if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{const current=entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];if(current)nav.forEach(a=>a.classList.toggle('active',a.hash==='#'+current.target.id));},{rootMargin:'-90px 0px -50% 0px',threshold:[0,.1,.25]});document.querySelectorAll('main section').forEach(section=>observer.observe(section));}
