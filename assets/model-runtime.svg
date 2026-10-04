@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="360" viewBox="0 0 1000 360" role="img"><g font-family="Yu Gothic UI,Noto Sans JP,system-ui,sans-serif">
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="#45d9e9"/></marker></defs>
+<text x="24" y="37" fill="#edf3fc" font-size="25" font-weight="600">Coder IQ1_M：RAMに保持</text>
+<rect x="24" y="58" width="260" height="90" rx="8" fill="#192a3d" stroke="#30435b"/><text x="44" y="92" fill="#edf3fc" font-size="22">SSD / モデル保存</text><text x="44" y="125" fill="#9aaac2" font-size="18">起動時に読み込む</text>
+<path d="M295 104H361" stroke="#45d9e9" stroke-width="3" marker-end="url(#a)"/>
+<rect x="377" y="58" width="260" height="90" rx="8" fill="#192a3d" stroke="#30435b"/><text x="397" y="92" fill="#45d9e9" font-size="22">RAM / 約19.5GiB常駐</text><text x="397" y="125" fill="#9aaac2" font-size="18">回答中はここから処理</text>
+<path d="M648 104H710" stroke="#45d9e9" stroke-width="3" marker-end="url(#a)"/>
+<rect x="726" y="58" width="250" height="90" rx="8" fill="#192a3d" stroke="#30435b"/><text x="746" y="92" fill="#45d9e9" font-size="22">GPU / キャッシュ</text><text x="746" y="125" fill="#9aaac2" font-size="18">約4.7GiBの専門家データ</text>
+<text x="24" y="212" fill="#edf3fc" font-size="25" font-weight="600">通常版 IQ2_XS：SSDから読み足す</text>
+<rect x="24" y="233" width="260" height="90" rx="8" fill="#2c251f" stroke="#715439"/><text x="44" y="267" fill="#ffb66b" font-size="22">SSD / 必要なデータ</text><text x="44" y="300" fill="#9aaac2" font-size="18">回答中も不足分を読む</text>
+<path d="M295 279H361" stroke="#45d9e9" stroke-width="3" marker-end="url(#a)"/>
+<rect x="377" y="233" width="260" height="90" rx="8" fill="#192a3d" stroke="#30435b"/><text x="397" y="267" fill="#edf3fc" font-size="22">RAM / OSキャッシュ</text><text x="397" y="300" fill="#9aaac2" font-size="18">OSが保持量を調整</text>
+<path d="M648 279H710" stroke="#45d9e9" stroke-width="3" marker-end="url(#a)"/>
+<rect x="726" y="233" width="250" height="90" rx="8" fill="#192a3d" stroke="#30435b"/><text x="746" y="267" fill="#45d9e9" font-size="22">GPU / キャッシュ</text><text x="746" y="300" fill="#9aaac2" font-size="18">よく使う専門家を保持</text>
+<text x="24" y="351" fill="#9aaac2" font-size="18">測定時の概念図。データ配置の一部を示すもので、RAM・GPU全体の使用量ではありません。</text>
+</g></svg>

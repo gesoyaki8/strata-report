@@ -1,0 +1,2114 @@
+{
+  "date": "2026-10-04",
+  "model": "qwen3.8-flash-next-iq2_xs",
+  "optimization": {
+    "selected": "reference",
+    "reference_tokens_per_s": 38.150000000000006,
+    "verified_tokens_per_s": 42.7,
+    "max_context": 65536,
+    "health": {
+      "status": "ok",
+      "max_context": 65536,
+      "model": "qwen3.8-flash-next-iq2_xs",
+      "images": false,
+      "api_key": false,
+      "loaded": true,
+      "service": "strata"
+    },
+    "backup": "G:\\Strata\\logs\\strata-iq2_xs.before-optimization.json",
+    "results": "G:\\Strata\\logs\\iq2-optimization-comparison.json"
+  },
+  "simple": [
+    {
+      "stage": 1,
+      "attempt": 1,
+      "generation_s": 33.883104900000035,
+      "ttft_s": 11.322666099993512,
+      "finish": "stop",
+      "usage": {
+        "prompt_tokens": 189,
+        "completion_tokens": 503,
+        "total_tokens": 692,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "passed": true,
+      "tests": {
+        "tests": 6,
+        "failures": 0,
+        "errors": 0
+      }
+    },
+    {
+      "stage": 2,
+      "attempt": 1,
+      "generation_s": 36.37544489999709,
+      "ttft_s": 4.079799899991485,
+      "finish": "stop",
+      "usage": {
+        "prompt_tokens": 826,
+        "completion_tokens": 797,
+        "total_tokens": 1623,
+        "prompt_tokens_details": {
+          "cached_tokens": 691
+        }
+      },
+      "passed": true,
+      "tests": {
+        "tests": 12,
+        "failures": 0,
+        "errors": 0
+      }
+    },
+    {
+      "stage": 3,
+      "before_fix": true,
+      "passed": false,
+      "tests": {
+        "tests": 16,
+        "failures": 1,
+        "errors": 0
+      }
+    },
+    {
+      "stage": 3,
+      "attempt": 1,
+      "generation_s": 36.386175199993886,
+      "ttft_s": 7.890659199998481,
+      "finish": "stop",
+      "usage": {
+        "prompt_tokens": 2192,
+        "completion_tokens": 799,
+        "total_tokens": 2991,
+        "prompt_tokens_details": {
+          "cached_tokens": 1622
+        }
+      },
+      "passed": true,
+      "tests": {
+        "tests": 16,
+        "failures": 0,
+        "errors": 0
+      }
+    }
+  ],
+  "advanced": [
+    {
+      "stage": 1,
+      "attempt": 1,
+      "generation_s": 59.136638399999356,
+      "ttft_s": 6.412530500005232,
+      "finish": "stop",
+      "usage": {
+        "prompt_tokens": 362,
+        "completion_tokens": 1693,
+        "total_tokens": 2055,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "passed": true,
+      "tests": {
+        "tests": 13,
+        "failures": 0,
+        "errors": 0
+      }
+    },
+    {
+      "stage": 2,
+      "attempt": 1,
+      "generation_s": 104.46151520000421,
+      "ttft_s": 22.09462380000332,
+      "finish": "stop",
+      "usage": {
+        "prompt_tokens": 2207,
+        "completion_tokens": 2232,
+        "total_tokens": 4439,
+        "prompt_tokens_details": {
+          "cached_tokens": 355
+        }
+      },
+      "passed": false,
+      "tests": null
+    },
+    {
+      "stage": 2,
+      "attempt": 2,
+      "generation_s": 87.92557760000636,
+      "ttft_s": 3.070299700004398,
+      "finish": "stop",
+      "usage": {
+        "prompt_tokens": 4497,
+        "completion_tokens": 2281,
+        "total_tokens": 6778,
+        "prompt_tokens_details": {
+          "cached_tokens": 4439
+        }
+      },
+      "passed": true,
+      "tests": {
+        "tests": 22,
+        "failures": 0,
+        "errors": 0
+      }
+    },
+    {
+      "stage": 3,
+      "before_fix": true,
+      "passed": false,
+      "tests": {
+        "tests": 28,
+        "failures": 2,
+        "errors": 0
+      }
+    },
+    {
+      "stage": 3,
+      "attempt": 1,
+      "generation_s": 114.06164159999753,
+      "ttft_s": 15.500693599999067,
+      "finish": "stop",
+      "usage": {
+        "prompt_tokens": 7711,
+        "completion_tokens": 2330,
+        "total_tokens": 10041,
+        "prompt_tokens_details": {
+          "cached_tokens": 6778
+        }
+      },
+      "passed": true,
+      "tests": {
+        "tests": 28,
+        "failures": 0,
+        "errors": 0
+      }
+    }
+  ],
+  "ssd": [
+    {
+      "measured_at": "2026-10-04T17:08:16.537805+09:00",
+      "method": "Windows disk-device byte counters via psutil; device traffic includes other applications. These counters do not measure internal NAND writes or SSD write amplification.",
+      "strata_disk": "PhysicalDrive4 (G:, SHGP31-1000GM NVMe)",
+      "idle": {
+        "duration_s": 10.001383700000588,
+        "disks": {
+          "PhysicalDrive0": {
+            "read_mib": 0.0078125,
+            "write_mib": 12.3359375,
+            "average_read_mib_s": 0.0007811419133933979,
+            "average_write_mib_s": 1.2334230812481752,
+            "peak_read_mib_s": 0.0077137805790593195,
+            "peak_write_mib_s": 4.9025224632848605
+          },
+          "PhysicalDrive1": {
+            "read_mib": 0.0,
+            "write_mib": 0.0,
+            "average_read_mib_s": 0.0,
+            "average_write_mib_s": 0.0,
+            "peak_read_mib_s": 0.0,
+            "peak_write_mib_s": 0.0
+          },
+          "PhysicalDrive2": {
+            "read_mib": 0.0,
+            "write_mib": 0.0,
+            "average_read_mib_s": 0.0,
+            "average_write_mib_s": 0.0,
+            "peak_read_mib_s": 0.0,
+            "peak_write_mib_s": 0.0
+          },
+          "PhysicalDrive3": {
+            "read_mib": 38.12646484375,
+            "write_mib": 1.671875,
+            "average_read_mib_s": 3.8121190014685427,
+            "average_write_mib_s": 0.16716436946618712,
+            "peak_read_mib_s": 15.064396556486075,
+            "peak_write_mib_s": 1.2178734600248784
+          },
+          "PhysicalDrive4": {
+            "read_mib": 2560.35595703125,
+            "write_mib": 0.1796875,
+            "average_read_mib_s": 256.0001729591776,
+            "average_write_mib_s": 0.01796626400804815,
+            "peak_read_mib_s": 257.9497087161762,
+            "peak_write_mib_s": 0.22591628904437044
+          }
+        },
+        "samples": [
+          {
+            "elapsed_s": 0.5161226000054739,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.007568453696773927,
+                "write": 0.007568453696773927
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 9.693297072143206,
+                "write": 0.07568453696773927
+              },
+              "PhysicalDrive4": {
+                "read": 255.78346113617164,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 1.0196899000002304,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 4.9025224632848605
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 15.064396556486075,
+                "write": 1.2178734600248784
+              },
+              "PhysicalDrive4": {
+                "read": 254.2252669133461,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 1.519937100005336,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 6.0146045044715715,
+                "write": 0.09370367290315983
+              },
+              "PhysicalDrive4": {
+                "read": 257.90471846705634,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 2.025823300005868,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 0.05405118779672433
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 0.04632958954004943,
+                "write": 0.162153563390173
+              },
+              "PhysicalDrive4": {
+                "read": 257.0133979734242,
+                "write": 0.12354557210679848
+              }
+            }
+          },
+          {
+            "elapsed_s": 2.5280867999972543,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 2.3876287048940776
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 1.7032269914390978,
+                "write": 0.12443667517363272
+              },
+              "PhysicalDrive4": {
+                "read": 256.8761840193697,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 3.04155449999962,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 0.007607586611547333
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 0.6903884849979205,
+                "write": 0.022822759834642
+              },
+              "PhysicalDrive4": {
+                "read": 255.15845495129753,
+                "write": 0.007607586611547333
+              }
+            }
+          },
+          {
+            "elapsed_s": 3.5464291000098456,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 4.796983250793263
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 1.686681207536986,
+                "write": 0.09284483711212767
+              },
+              "PhysicalDrive4": {
+                "read": 257.5283669397641,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 4.05027720000362,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 0.5039341222148841,
+                "write": 0.0
+              },
+              "PhysicalDrive4": {
+                "read": 256.06055674635684,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 4.551887200010242,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 0.007787424493029314
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 1.014312040217068,
+                "write": 0.10123651840938108
+              },
+              "PhysicalDrive4": {
+                "read": 255.2172629100497,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 5.067631600002642,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 2.4539772026970152
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 0.0,
+                "write": 0.03787001856013913
+              },
+              "PhysicalDrive4": {
+                "read": 255.97860345540442,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 5.571894699998666,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 0.007746452199319763
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 3.2709394411627697,
+                "write": 0.015492904398639526
+              },
+              "PhysicalDrive4": {
+                "read": 255.84982323913312,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 6.0720679000078235,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 0.6482129590191232,
+                "write": 0.0
+              },
+              "PhysicalDrive4": {
+                "read": 257.9497087161762,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 6.58469889999833,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 2.4003010938136558
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 4.015741829967609,
+                "write": 0.01524000694484861
+              },
+              "PhysicalDrive4": {
+                "read": 257.53325735752423,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 7.086129100003745,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 0.12464346981758369
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 10.028930434775738,
+                "write": 0.023370650590796942
+              },
+              "PhysicalDrive4": {
+                "read": 257.2952825709471,
+                "write": 0.22591628904437044
+              }
+            }
+          },
+          {
+            "elapsed_s": 7.590065800002776,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 4.782656730507296
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 1.6898203683153816,
+                "write": 0.9534307582696878
+              },
+              "PhysicalDrive4": {
+                "read": 254.03891252660551,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 8.09607149999647,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 4.050951772925776,
+                "write": 0.08491752168115013
+              },
+              "PhysicalDrive4": {
+                "read": 256.94498105776375,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 8.598129799996968,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 0.007780470913430009
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 2.1396295011932525,
+                "write": 0.0
+              },
+              "PhysicalDrive4": {
+                "read": 254.98937324584168,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 9.100050200009719,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 2.443739086852899
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 0.5058695561956639,
+                "write": 0.015565217113712733
+              },
+              "PhysicalDrive4": {
+                "read": 257.04399541585207,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 9.606449099999736,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0077137805790593195,
+                "write": 0.0077137805790593195
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 11.37493368639535,
+                "write": 0.2776961008461355
+              },
+              "PhysicalDrive4": {
+                "read": 248.8542752610327,
+                "write": 0.0
+              }
+            }
+          }
+        ],
+        "result": null
+      },
+      "generation": {
+        "duration_s": 6.54891409999982,
+        "disks": {
+          "PhysicalDrive0": {
+            "read_mib": 0.0,
+            "write_mib": 8.890625,
+            "average_read_mib_s": 0.0,
+            "average_write_mib_s": 1.3575723950937522,
+            "peak_read_mib_s": 0.0,
+            "peak_write_mib_s": 5.402596375156587
+          },
+          "PhysicalDrive1": {
+            "read_mib": 0.0,
+            "write_mib": 0.0,
+            "average_read_mib_s": 0.0,
+            "average_write_mib_s": 0.0,
+            "peak_read_mib_s": 0.0,
+            "peak_write_mib_s": 0.0
+          },
+          "PhysicalDrive2": {
+            "read_mib": 0.0,
+            "write_mib": 0.0,
+            "average_read_mib_s": 0.0,
+            "average_write_mib_s": 0.0,
+            "peak_read_mib_s": 0.0,
+            "peak_write_mib_s": 0.0
+          },
+          "PhysicalDrive3": {
+            "read_mib": 21.53369140625,
+            "write_mib": 0.7578125,
+            "average_read_mib_s": 3.288131601275789,
+            "average_write_mib_s": 0.11571574896669065,
+            "peak_read_mib_s": 7.455895080951083,
+            "peak_write_mib_s": 0.7395484951583223
+          },
+          "PhysicalDrive4": {
+            "read_mib": 2707.45458984375,
+            "write_mib": 0.01171875,
+            "average_read_mib_s": 413.4203851969633,
+            "average_write_mib_s": 0.0017894187984539792,
+            "peak_read_mib_s": 473.0285782109847,
+            "peak_write_mib_s": 0.015424691866215147
+          }
+        },
+        "samples": [
+          {
+            "elapsed_s": 0.5131531999941217,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 2.458756468856578
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 1.8954500332671453,
+                "write": 0.426285951256868
+              },
+              "PhysicalDrive4": {
+                "read": 377.3087403571057,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 1.0163394999981392,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 2.0261506523366393,
+                "write": 0.13973452774735443
+              },
+              "PhysicalDrive4": {
+                "read": 424.86283161583117,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 1.528061599994544,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 4.416955816967608,
+                "write": 0.007633537812862577
+              },
+              "PhysicalDrive4": {
+                "read": 413.364660296548,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 2.029845799988834,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 5.402596375156587
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 1.1910623132549822,
+                "write": 0.7395484951583223
+              },
+              "PhysicalDrive4": {
+                "read": 343.7421405495882,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 2.544561099988641,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 0.015178293709168796
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 1.472294489789373,
+                "write": 0.0
+              },
+              "PhysicalDrive4": {
+                "read": 358.53406485113067,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 3.0461764999927254,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 2.4374376264964055
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 5.0909739563004,
+                "write": 0.023362021979198774
+              },
+              "PhysicalDrive4": {
+                "read": 406.810676064448,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 3.5595957999903476,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 0.0076083037782531575
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 3.7356771551223003,
+                "write": 0.0
+              },
+              "PhysicalDrive4": {
+                "read": 418.9360309419536,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 4.059832499988261,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 0.24207290268887746,
+                "write": 0.0
+              },
+              "PhysicalDrive4": {
+                "read": 404.8708341488038,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 4.5663255999970715,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 2.4139642770626706
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 5.5606014177705605,
+                "write": 0.1156851889966136
+              },
+              "PhysicalDrive4": {
+                "read": 455.12867055047724,
+                "write": 0.015424691866215147
+              }
+            }
+          },
+          {
+            "elapsed_s": 5.070899300000747,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 0.007741683722262076,
+                "write": 0.015483367444524151
+              },
+              "PhysicalDrive4": {
+                "read": 435.47745106096403,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 5.570894099990255,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 0.007812581251008942
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 4.789112306868482,
+                "write": 0.015625162502017884
+              },
+              "PhysicalDrive4": {
+                "read": 426.6763124426024,
+                "write": 0.007812581251008942
+              }
+            }
+          },
+          {
+            "elapsed_s": 6.084984999994049,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 4.771772851808693
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 7.455895080951083,
+                "write": 0.00759836441370811
+              },
+              "PhysicalDrive4": {
+                "read": 473.0285782109847,
+                "write": 0.0
+              }
+            }
+          }
+        ],
+        "result": {
+          "id": "chatcmpl-b2dea995bc394adab8c6820f",
+          "object": "chat.completion",
+          "created": 1791101289,
+          "model": "qwen3.8-flash-next-iq2_xs",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "```python\nimport csv\nfrom collections import defaultdict\n\n\ndef calculate_column_means(filepath):\n    \"\"\"\n    Read a CSV file and calculate the mean of each numeric column.\n    \n    Args:\n        filepath: Path to the CSV file.\n        \n    Returns:\n        A dictionary mapping column names to their mean values.\n        Only columns that contain at least one numeric value are included.\n    \"\"\"\n    column_sums = defaultdict(float)\n    column_counts = defaultdict(int)\n    \n    with open(filepath, 'r', newline='', encoding='utf-8') as f:\n        reader = csv.reader(f)\n        header = next(reader)\n        \n        for row in reader:\n            for i, value in enumerate(row):\n                try:\n                    numeric_value = float(value)\n                    column_sums[i] += numeric_value\n                    column_counts[i] += 1\n                except ValueError:\n                    pass\n    \n    means = {}\n    for i, col_name in enumerate(header):\n        if column_counts[i] > 0:\n            means[col_name] = column_sums[i] / column_counts[i]\n    \n    return means\n\n\n# Usage example\nif __name__ == \"__main__"
+              },
+              "finish_reason": "length"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 42,
+            "completion_tokens": 256,
+            "total_tokens": 298,
+            "prompt_tokens_details": {
+              "cached_tokens": 35
+            }
+          },
+          "timings": {
+            "cache_n": 35,
+            "prompt_n": 7,
+            "prompt_ms": 185.4,
+            "prompt_per_token_ms": 26.486,
+            "prompt_per_second": 37.8,
+            "predicted_n": 256,
+            "predicted_ms": 6349.5,
+            "predicted_per_token_ms": 24.803,
+            "predicted_per_second": 40.3,
+            "draft_n": 213,
+            "draft_n_accepted": 179
+          }
+        }
+      }
+    },
+    {
+      "measured_at": "2026-10-04T17:19:09.407211+09:00",
+      "method": "Windows disk-device byte counters via psutil; device traffic includes other applications. These counters do not measure internal NAND writes or SSD write amplification.",
+      "strata_disk": "PhysicalDrive4 (G:, SHGP31-1000GM NVMe)",
+      "idle": {
+        "duration_s": 10.001388400007272,
+        "disks": {
+          "PhysicalDrive0": {
+            "read_mib": 0.05859375,
+            "write_mib": 17.4296875,
+            "average_read_mib_s": 0.00585856159730357,
+            "average_write_mib_s": 1.7427267898112353,
+            "peak_read_mib_s": 0.023438301589878776,
+            "peak_write_mib_s": 5.672294906007377
+          },
+          "PhysicalDrive1": {
+            "read_mib": 0.0,
+            "write_mib": 0.0,
+            "average_read_mib_s": 0.0,
+            "average_write_mib_s": 0.0,
+            "peak_read_mib_s": 0.0,
+            "peak_write_mib_s": 0.0
+          },
+          "PhysicalDrive2": {
+            "read_mib": 0.0,
+            "write_mib": 0.0,
+            "average_read_mib_s": 0.0,
+            "average_write_mib_s": 0.0,
+            "peak_read_mib_s": 0.0,
+            "peak_write_mib_s": 0.0
+          },
+          "PhysicalDrive3": {
+            "read_mib": 59.2353515625,
+            "write_mib": 2.41796875,
+            "average_read_mib_s": 5.922712846794044,
+            "average_write_mib_s": 0.24176330858206066,
+            "peak_read_mib_s": 90.78797215608114,
+            "peak_write_mib_s": 0.7959636216400493
+          },
+          "PhysicalDrive4": {
+            "read_mib": 0.0,
+            "write_mib": 0.06640625,
+            "average_read_mib_s": 0.0,
+            "average_write_mib_s": 0.006639703143610713,
+            "peak_read_mib_s": 0.0,
+            "peak_write_mib_s": 0.12295024724883265
+          }
+        },
+        "samples": [
+          {
+            "elapsed_s": 0.5005725000082748,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.007803564918039699,
+                "write": 5.618566740988583
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 2.3176587806577906,
+                "write": 0.7959636216400493
+              },
+              "PhysicalDrive4": {
+                "read": 0.0,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 1.0101470000081463,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 0.007665709332003437
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 0.8978462055109026,
+                "write": 0.02299712799601031
+              },
+              "PhysicalDrive4": {
+                "read": 0.0,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 1.5247813000023598,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.007590341335670633,
+                "write": 0.0
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 0.3187943360981666,
+                "write": 0.0
+              },
+              "PhysicalDrive4": {
+                "read": 0.0,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 2.034511100006057,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 3.333567607755472
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 2.018341077454247,
+                "write": 0.3141983262482169
+              },
+              "PhysicalDrive4": {
+                "read": 0.0,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 2.542846800002735,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0076843904530520405,
+                "write": 0.18442537087324898
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 0.2766380563098735,
+                "write": 0.0
+              },
+              "PhysicalDrive4": {
+                "read": 0.0,
+                "write": 0.12295024724883265
+              }
+            }
+          },
+          {
+            "elapsed_s": 3.0534868000104325,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 3.029286777331745
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 2.0577730886420187,
+                "write": 0.27538970703015864
+              },
+              "PhysicalDrive4": {
+                "read": 0.0,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 3.5658626000076765,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0076237987821068266,
+                "write": 0.0
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 3.697542409321811,
+                "write": 0.0
+              },
+              "PhysicalDrive4": {
+                "read": 0.0,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 4.075036599999294,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 0.00767173893416457
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 4.490844178586586,
+                "write": 0.046030433604987424
+              },
+              "PhysicalDrive4": {
+                "read": 0.0,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 4.586820800002897,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0076326115577083,
+                "write": 5.663397775819559
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 0.3825846543301285,
+                "write": 0.5571806437127059
+              },
+              "PhysicalDrive4": {
+                "read": 0.0,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 5.10287370000151,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 0.0075694759200277744
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 1.7561184134464436,
+                "write": 0.1740979461606388
+              },
+              "PhysicalDrive4": {
+                "read": 0.0,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 5.604935299998033,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.015560839546490122,
+                "write": 0.0
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 2.5461423707944464,
+                "write": 0.2800951118368222
+              },
+              "PhysicalDrive4": {
+                "read": 0.0,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 6.118859800000791,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 3.367165313174817
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 0.20522226513706562,
+                "write": 0.7068766910276705
+              },
+              "PhysicalDrive4": {
+                "read": 0.0,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 6.618842700001551,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.023438301589878776,
+                "write": 0.0
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 0.242195783095414,
+                "write": 0.031251068786505035
+              },
+              "PhysicalDrive4": {
+                "read": 0.0,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 7.1311792000051355,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 3.728323572469725
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 0.12199013734052269,
+                "write": 0.16011205525943603
+              },
+              "PhysicalDrive4": {
+                "read": 0.0,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 7.64458160000504,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 0.19021385564231522
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 0.38803626551032305,
+                "write": 0.0
+              },
+              "PhysicalDrive4": {
+                "read": 0.0,
+                "write": 0.007608554225692609
+              }
+            }
+          },
+          {
+            "elapsed_s": 8.14639470000111,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.023352818011510196,
+                "write": 0.08562699937553739
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 90.78797215608114,
+                "write": 0.10119554471654418
+              },
+              "PhysicalDrive4": {
+                "read": 0.0,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 8.656687499998952,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 5.672294906007377
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 0.007654918901494436,
+                "write": 0.07654918901494435
+              },
+              "PhysicalDrive4": {
+                "read": 0.0,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 9.171921400004067,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 0.0075815081266221536
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 0.31842334131813044,
+                "write": 0.030326032506488614
+              },
+              "PhysicalDrive4": {
+                "read": 0.0,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 9.682122600002913,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0076562932427615485,
+                "write": 0.0
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 3.866428087594582,
+                "write": 0.35984578240979276
+              },
+              "PhysicalDrive4": {
+                "read": 0.0,
+                "write": 0.0
+              }
+            }
+          }
+        ],
+        "result": null
+      },
+      "generation": {
+        "duration_s": 8.547073499998078,
+        "disks": {
+          "PhysicalDrive0": {
+            "read_mib": 0.01953125,
+            "write_mib": 12.6171875,
+            "average_read_mib_s": 0.0022851388840875644,
+            "average_write_mib_s": 1.4761997191205665,
+            "peak_read_mib_s": 0.015276694422437386,
+            "peak_write_mib_s": 5.790865861452346
+          },
+          "PhysicalDrive1": {
+            "read_mib": 0.0,
+            "write_mib": 0.0,
+            "average_read_mib_s": 0.0,
+            "average_write_mib_s": 0.0,
+            "peak_read_mib_s": 0.0,
+            "peak_write_mib_s": 0.0
+          },
+          "PhysicalDrive2": {
+            "read_mib": 0.0,
+            "write_mib": 0.0,
+            "average_read_mib_s": 0.0,
+            "average_write_mib_s": 0.0,
+            "peak_read_mib_s": 0.0,
+            "peak_write_mib_s": 0.0
+          },
+          "PhysicalDrive3": {
+            "read_mib": 5.94189453125,
+            "write_mib": 39.5625,
+            "average_read_mib_s": 0.6951963770115392,
+            "average_write_mib_s": 4.62877732360777,
+            "peak_read_mib_s": 2.3712926742277856,
+            "peak_write_mib_s": 47.43126400121167
+          },
+          "PhysicalDrive4": {
+            "read_mib": 2078.21533203125,
+            "write_mib": 0.15625,
+            "average_read_mib_s": 243.14934603425576,
+            "average_write_mib_s": 0.018281111072700515,
+            "peak_read_mib_s": 490.90991073338876,
+            "peak_write_mib_s": 0.12984537731168827
+          }
+        },
+        "samples": [
+          {
+            "elapsed_s": 0.5034927999950014,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.007758303594487906,
+                "write": 0.0
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 0.6827307163149358,
+                "write": 0.6129059839645447
+              },
+              "PhysicalDrive4": {
+                "read": 465.6223485267862,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 1.0034651999885682,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 0.007812931273906844
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 0.1250069003825095,
+                "write": 0.015625862547813688
+              },
+              "PhysicalDrive4": {
+                "read": 490.90991073338876,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 1.5063025999988895,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.007768415793892459,
+                "write": 3.557934433602746
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 0.6059364319236118,
+                "write": 0.49717861080911735
+              },
+              "PhysicalDrive4": {
+                "read": 444.5708990528776,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 2.0177671999990707,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 0.007637380964388573
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 0.18329714314532575,
+                "write": 0.0
+              },
+              "PhysicalDrive4": {
+                "read": 118.74599923431353,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 2.51896059999126,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 5.790865861452346
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 0.20264133566320458,
+                "write": 0.23381692576523605
+              },
+              "PhysicalDrive4": {
+                "read": 183.8424548316796,
+                "write": 0.007793897525507868
+              }
+            }
+          },
+          {
+            "elapsed_s": 3.0327388000005158,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 0.17486874686076886
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 0.9579766132372555,
+                "write": 0.04561793396367883
+              },
+              "PhysicalDrive4": {
+                "read": 229.8003423420321,
+                "write": 0.12164782390314355
+              }
+            }
+          },
+          {
+            "elapsed_s": 3.5360407999978634,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.007761244739779667,
+                "write": 0.0
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 0.19403111849449167,
+                "write": 0.0
+              },
+              "PhysicalDrive4": {
+                "read": 317.7298371571,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 4.047324099999969,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 3.4151198562378418
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 2.3712926742277856,
+                "write": 0.9015305213334794
+              },
+              "PhysicalDrive4": {
+                "read": 181.64407488151392,
+                "write": 0.007640089163843047
+              }
+            }
+          },
+          {
+            "elapsed_s": 4.549544299996342,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 0.2800066584359125,
+                "write": 0.031111850937323614
+              },
+              "PhysicalDrive4": {
+                "read": 206.69158170210943,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 5.0642219000001205,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 0.0075897027575540866
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 0.7362011674827463,
+                "write": 0.31876751581727164
+              },
+              "PhysicalDrive4": {
+                "read": 242.7794118086401,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 5.575731599994469,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 5.567159821273107
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 0.3388788985857258,
+                "write": 0.4963859922945843
+              },
+              "PhysicalDrive4": {
+                "read": 49.653872644605954,
+                "write": 0.03054683029505134
+              }
+            }
+          },
+          {
+            "elapsed_s": 6.089481199989677,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 0.00760341224603666
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 1.548244818599215,
+                "write": 0.0
+              },
+              "PhysicalDrive4": {
+                "read": 104.5697286197422,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 6.60199169999396,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 0.7545577114942402
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 0.08383974572158225,
+                "write": 26.318058361511227
+              },
+              "PhysicalDrive4": {
+                "read": 190.68969074620603,
+                "write": 0.007621795065598387
+              }
+            }
+          },
+          {
+            "elapsed_s": 7.113391599996248,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.015276694422437386,
+                "write": 0.0
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 0.007638347211218693,
+                "write": 0.015276694422437386
+              },
+              "PhysicalDrive4": {
+                "read": 211.30723725115394,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 7.626634299987927,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 0.007610921694674531
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 0.9513652118343163,
+                "write": 47.43126400121167
+              },
+              "PhysicalDrive4": {
+                "read": 191.46795707292716,
+                "write": 0.0
+              }
+            }
+          },
+          {
+            "elapsed_s": 8.138059899996733,
+            "rates_mib_s": {
+              "PhysicalDrive0": {
+                "read": 0.0,
+                "write": 5.537523444174941
+              },
+              "PhysicalDrive1": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive2": {
+                "read": 0.0,
+                "write": 0.0
+              },
+              "PhysicalDrive3": {
+                "read": 0.5480238718890372,
+                "write": 0.23677686450954918
+              },
+              "PhysicalDrive4": {
+                "read": 305.52617281440246,
+                "write": 0.12984537731168827
+              }
+            }
+          }
+        ],
+        "result": {
+          "id": "chatcmpl-15ead5f0115f462f866de819",
+          "object": "chat.completion",
+          "created": 1791101940,
+          "model": "qwen3.8-flash-next-iq2_xs",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "```python\nimport csv\nfrom collections import defaultdict\n\n\ndef calculate_column_means(filepath):\n    \"\"\"\n    Read a CSV file and calculate the mean of each numeric column.\n    \n    Args:\n        filepath: Path to the CSV file.\n        \n    Returns:\n        A dictionary mapping column names to their mean values.\n        Only columns that contain at least one numeric value are included.\n    \"\"\"\n    column_sums = defaultdict(float)\n    column_counts = defaultdict(int)\n    \n    with open(filepath, 'r', newline='', encoding='utf-8') as f:\n        reader = csv.reader(f)\n        header = next(reader)\n        \n        for row in reader:\n            for i, value in enumerate(row):\n                try:\n                    numeric_value = float(value)\n                    column_sums[i] += numeric_value\n                    column_counts[i] += 1\n                except ValueError:\n                    pass\n    \n    means = {}\n    for i, count in column_counts.items():\n        if count > 0:\n            means[header[i]] = column_sums[i] / count\n    \n    return means\n\n\n# Usage example\nif __name__ == \"__main__\":\n    # Example:"
+              },
+              "finish_reason": "length"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 42,
+            "completion_tokens": 256,
+            "total_tokens": 298,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 42,
+            "prompt_ms": 1694.5,
+            "prompt_per_token_ms": 40.345,
+            "prompt_per_second": 24.8,
+            "predicted_n": 256,
+            "predicted_ms": 6841.5,
+            "predicted_per_token_ms": 26.725,
+            "predicted_per_second": 37.4,
+            "draft_n": 216,
+            "draft_n_accepted": 179
+          }
+        }
+      }
+    }
+  ]
+}
